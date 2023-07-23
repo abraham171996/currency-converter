@@ -1,70 +1,11 @@
-# Getting Started with Create React App
+The Git repository contains a simple React application that allows users to convert currency amounts from one currency to another using the Frankfurter API. The application provides an input field for the user to enter the amount, and two select dropdowns to choose the source currency (`fromCur`) and the target currency (`toCur`). Upon selection, the converted currency amount is displayed below.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The `App` component manages the state of the amount, source currency, target currency, converted value, and loading status. It uses the `useState` hook to handle these states and the `useEffect` hook to trigger the currency conversion when any of the input values (`amount`, `fromCur`, `toCur`) change.
 
-## Available Scripts
+The currency conversion is performed using the Frankfurter API, which provides the latest exchange rates. When the user selects different currencies or changes the amount, the application fetches the exchange rate for the selected currencies from the API and calculates the converted amount. If the source and target currencies are the same, the converted amount is set to the same value as the input amount.
 
-In the project directory, you can run:
+The application uses the `fetch` API to make asynchronous API calls to Frankfurter and uses `async/await` to handle the response. It then updates the `converted` state with the calculated converted amount.
 
-### `npm start`
+The user interface is straightforward and user-friendly, providing a seamless experience for converting currencies in real-time. Users can easily input the amount and select the desired currencies for conversion.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developers can use this code as a starting point to build more complex currency conversion applications or integrate currency conversion features into larger projects. The repository showcases how to use React's state management and hooks to handle user input and perform API calls for currency conversion.
