@@ -40,3 +40,24 @@ const App = () => {
 }
 
 export default App
+
+
+// const App = () => {
+//   const [amount,setAmount] = useState(1);
+//   const [fromCur,setFromCur] = useState("EUR")
+//   const [toCur,setToCur] = useState("USD")
+//   const [converted ,setConverted] = useState("")
+//   const [isLoading,setIsLoading] = useState(false)
+//   useEffect(()=>{
+//     setIsLoading(true)
+//     async function convert(){
+//      const res = await fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${fromCur}&to=${toCur}`)
+//      const data = await res.json()
+//      setConverted(data.rates[toCur]);
+//      setIsLoading(false)
+//     }
+    
+//     if(fromCur===toCur) return setConverted(amount);
+
+//     convert()
+//   },[amount,fromCur,toCur])
